@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TipCalculator.h"
 
 @interface ViewController ()
 
@@ -38,9 +39,18 @@
 
 - (IBAction)calculate:(id)sender {
     //@ToDo - make the calculations
-    _amount.text = self.invoiceAmount.text;
-    _tipAmount.text = self.tipInPercent.text;
-    _tipAmountPerPerson.text = self.tipInPercent.text;
-    _amountPerPerson.text = self.invoiceAmount.text;
+    
+    TipCalculator *tc   =   [[TipCalculator alloc]init];
+    tc.invoiceAmount    =   [self.invoiceAmount.text doubleValue];
+    tc.amountOfPersons  =   [self.numberOfPersons.text intValue];
+    tc.tipInPercent     =   [self.tipInPercent.text intValue];
+    
+    _amount.text = [NSString stringWithFormat:@"%f",tc.invoiceAmount];
+    _tipAmount.text = [NSString stringWithFormat:@"%f",tc.getTipAmount];
+    _tipAmountPerPerson.text = [NSString stringWithFormat:@"%f",tc.getTipAmountPerPerson];
+    _amountPerPerson.text = [NSString stringWithFormat:@"%f",tc.getInvoiceAmountPerPerson];
 }
+
+
+
 @end

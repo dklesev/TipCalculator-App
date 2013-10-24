@@ -14,10 +14,10 @@
     return self.invoiceAmount * self.tipInPercent / 100;
 }
 -(double) getInvoiceAmountPerPerson{
-    return self.invoiceAmount / self.amountOfPersons;
+    return (double)(self.invoiceAmount / self.amountOfPersons);
 }
 -(double) getTipAmountPerPerson{
-    return self.getTipAmount / self.amountOfPersons;
+    return (double)(self.getTipAmount / self.amountOfPersons);
 }
 
 @end
