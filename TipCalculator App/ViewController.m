@@ -18,7 +18,9 @@
 {
     [super viewDidLoad];
     //Hide the keyboard
+    [_invoiceAmount setDelegate:self];
     [_numberOfPersons setDelegate:self];
+    [_tipInPercent setDelegate:self];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -36,6 +38,9 @@
 
 - (IBAction)calculate:(id)sender {
     //@ToDo - make the calculations
-   _amount.text = self.numberOfPersons.text;
+    _amount.text = self.invoiceAmount.text;
+    _tipAmount.text = self.tipInPercent.text;
+    _tipAmountPerPerson.text = self.tipInPercent.text;
+    _amountPerPerson.text = self.invoiceAmount.text;
 }
 @end
