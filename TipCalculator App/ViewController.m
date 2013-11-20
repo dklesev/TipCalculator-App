@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "TipCalculator.h"
 
 @interface ViewController ()
 
@@ -19,10 +18,9 @@
 {
     [super viewDidLoad];
     //Hide the keyboard
-    [_invoiceAmount setDelegate:self];
-    [_numberOfPersons setDelegate:self];
-    [_tipInPercent setDelegate:self];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.modelConverter                 = [[ConvertModule alloc] init];
+    self.invoiceAmount.delegate=self;
+ 	// Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,18 +35,45 @@
     return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.invoiceAmount resignFirstResponder];
+    
+}
+
+- (IBAction)check:(id)sender {
+    
+    self.invoiceAmount.text = [self.modelConverter substring:self.invoiceAmount.text];
+    
+}
+
+- (IBAction)numberPersons:(UIStepper*)sender {
+    if([self.numberOfPersons.text intValue] == 1 && (int)[sender value] < 1){
+        return;
+    }
+    self.numberOfPersons.text = [NSString stringWithFormat:@"%i", (int)[sender value]];
+}
+
+- (IBAction)amountTip:(UIStepper*)sender {
+    if([self.tipInPercent.text intValue] == 1 && (int)[sender value] < 1){
+        return;
+    }
+    self.tipInPercent.text = [NSString stringWithFormat:@"%i", (int)[sender value]];
+}
+
 - (IBAction)calculate:(id)sender {
-    //@ToDo - make the calculations
     
-    TipCalculator *tc   =   [[TipCalculator alloc]init];
-    tc.invoiceAmount    =   [self.invoiceAmount.text doubleValue];
-    tc.amountOfPersons  =   [self.numberOfPersons.text intValue];
-    tc.tipInPercent     =   [self.tipInPercent.text intValue];
+    self.modelConverter                 = [[ConvertModule alloc] initWithString: self.invoiceAmount.text];
+    self.modelConverter.amountOfPersons = [self.numberOfPersons.text intValue];
+    self.modelConverter.tipInPercent    = [self.tipInPercent.text intValue];
     
-    _amount.text = [NSString stringWithFormat:@"%f",tc.invoiceAmount];
-    _tipAmount.text = [NSString stringWithFormat:@"%f",tc.getTipAmount];
-    _tipAmountPerPerson.text = [NSString stringWithFormat:@"%f",tc.getTipAmountPerPerson];
-    _amountPerPerson.text = [NSString stringWithFormat:@"%f",tc.getInvoiceAmountPerPerson];
+    self.amount.text                    = [self.modelConverter getInvoiceAmount];
+    
+    self.tipAmount.text                 = [self.modelConverter getTipAmount];
+    
+    self.tipAmountPerPerson.text        = [self.modelConverter getTipAmountPerPerson];
+    
+    self.amountPerPerson.text           = [self.modelConverter getInvoiceAmountPerPerson];
 }
 
 

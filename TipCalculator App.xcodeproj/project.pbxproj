@@ -23,7 +23,7 @@
 		048C677018189FE6004EF5FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048C674B18189FE6004EF5FE /* Foundation.framework */; };
 		048C677818189FE6004EF5FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048C677618189FE6004EF5FE /* InfoPlist.strings */; };
 		048C677B18189FE6004EF5FE /* TipCalculator_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C677A18189FE6004EF5FE /* TipCalculator_AppTests.m */; };
-		986DE10718198A1600A2EC7F /* TipCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 986DE10618198A1600A2EC7F /* TipCalculator.m */; };
+		048F672F183D6582002562DA /* ConvertModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F672E183D6582002562DA /* ConvertModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,8 +59,8 @@
 		048C677718189FE6004EF5FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		048C677918189FE6004EF5FE /* TipCalculator_AppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipCalculator_AppTests.h; sourceTree = "<group>"; };
 		048C677A18189FE6004EF5FE /* TipCalculator_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipCalculator_AppTests.m; sourceTree = "<group>"; };
-		986DE10518198A1500A2EC7F /* TipCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCalculator.h; sourceTree = "<group>"; };
-		986DE10618198A1600A2EC7F /* TipCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCalculator.m; sourceTree = "<group>"; };
+		048F672D183D6582002562DA /* ConvertModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertModule.h; sourceTree = "<group>"; };
+		048F672E183D6582002562DA /* ConvertModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,11 +120,11 @@
 		048C674F18189FE6004EF5FE /* TipCalculator App */ = {
 			isa = PBXGroup;
 			children = (
+				048F672D183D6582002562DA /* ConvertModule.h */,
+				048F672E183D6582002562DA /* ConvertModule.m */,
 				048C675818189FE6004EF5FE /* AppDelegate.h */,
 				048C675918189FE6004EF5FE /* AppDelegate.m */,
 				048C676118189FE6004EF5FE /* MainStoryboard.storyboard */,
-				986DE10518198A1500A2EC7F /* TipCalculator.h */,
-				986DE10618198A1600A2EC7F /* TipCalculator.m */,
 				048C676418189FE6004EF5FE /* ViewController.h */,
 				048C676518189FE6004EF5FE /* ViewController.m */,
 				048C675018189FE6004EF5FE /* Supporting Files */,
@@ -276,9 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				048C675618189FE6004EF5FE /* main.m in Sources */,
-				986DE10718198A1600A2EC7F /* TipCalculator.m in Sources */,
 				048C675A18189FE6004EF5FE /* AppDelegate.m in Sources */,
 				048C676618189FE6004EF5FE /* ViewController.m in Sources */,
+				048F672F183D6582002562DA /* ConvertModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
