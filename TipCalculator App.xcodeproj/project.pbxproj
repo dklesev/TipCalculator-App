@@ -24,6 +24,7 @@
 		048C677818189FE6004EF5FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 048C677618189FE6004EF5FE /* InfoPlist.strings */; };
 		048C677B18189FE6004EF5FE /* TipCalculator_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 048C677A18189FE6004EF5FE /* TipCalculator_AppTests.m */; };
 		048F672F183D6582002562DA /* ConvertModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F672E183D6582002562DA /* ConvertModule.m */; };
+		048F67821847BB51002562DA /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048F67811847BB51002562DA /* CalcViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		048C677A18189FE6004EF5FE /* TipCalculator_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipCalculator_AppTests.m; sourceTree = "<group>"; };
 		048F672D183D6582002562DA /* ConvertModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConvertModule.h; sourceTree = "<group>"; };
 		048F672E183D6582002562DA /* ConvertModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConvertModule.m; sourceTree = "<group>"; };
+		048F67801847BB51002562DA /* CalcViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
+		048F67811847BB51002562DA /* CalcViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				048C676118189FE6004EF5FE /* MainStoryboard.storyboard */,
 				048C676418189FE6004EF5FE /* ViewController.h */,
 				048C676518189FE6004EF5FE /* ViewController.m */,
+				048F67801847BB51002562DA /* CalcViewController.h */,
+				048F67811847BB51002562DA /* CalcViewController.m */,
 				048C675018189FE6004EF5FE /* Supporting Files */,
 			);
 			path = "TipCalculator App";
@@ -279,6 +284,7 @@
 				048C675A18189FE6004EF5FE /* AppDelegate.m in Sources */,
 				048C676618189FE6004EF5FE /* ViewController.m in Sources */,
 				048F672F183D6582002562DA /* ConvertModule.m in Sources */,
+				048F67821847BB51002562DA /* CalcViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

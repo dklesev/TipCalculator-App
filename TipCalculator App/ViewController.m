@@ -67,6 +67,7 @@
     self.modelConverter.amountOfPersons = [self.numberOfPersons.text intValue];
     self.modelConverter.tipInPercent    = [self.tipInPercent.text intValue];
     
+    /*
     self.amount.text                    = [self.modelConverter getInvoiceAmount];
     
     self.tipAmount.text                 = [self.modelConverter getTipAmount];
@@ -74,6 +75,9 @@
     self.tipAmountPerPerson.text        = [self.modelConverter getTipAmountPerPerson];
     
     self.amountPerPerson.text           = [self.modelConverter getInvoiceAmountPerPerson];
+     */
+    
+    [self performSegueWithIdentifier:@"afterCalculation" sender:self];
 }
 
 
