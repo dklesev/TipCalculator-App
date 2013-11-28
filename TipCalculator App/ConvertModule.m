@@ -11,7 +11,7 @@
 @implementation ConvertModule
 
 - (id)initWithString:(NSString *)text{
-    if(![text rangeOfString:@"bla"].location == NSNotFound){
+    if(!([text rangeOfString:@"."].location == NSNotFound)){
         if([text substringFromIndex:[text rangeOfString:@"." options:NSBackwardsSearch].location + 1].length < 2){
             NSMutableString *add = [NSMutableString stringWithFormat:@"%@00", text];
             text = [self substring:add];
@@ -32,8 +32,7 @@
     return value / 100;
 }
 
-- (NSString *) getTipAmount{
-    int value = self.invoiceAmount * self.tipInPercent / 100;
+- (NSString *) check: (int)value{
     if([self getCents:value]<10){
         return [self substring:
                 [NSMutableString stringWithFormat:@"%d.0%d", [self getEuros: value], [self getCents:value]]];
@@ -41,39 +40,26 @@
         return [self substring:
                 [NSMutableString stringWithFormat:@"%d.%d", [self getEuros: value], [self getCents:value]]];
     }
+}
+
+- (NSString *) getTipAmount{
+    int value = self.invoiceAmount * self.tipInPercent / 100;
+    return [self check:value];
 }
 
 - (NSString *) getInvoiceAmountPerPerson{
     int value = self.invoiceAmount / self.amountOfPersons;
-    if([self getCents:value]<10){
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.0%d", [self getEuros: value], [self getCents:value]]];
-    }else{
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.%d", [self getEuros: value], [self getCents:value]]];
-    }
+    return [self check:value];
 }
 
 - (NSString *) getTipAmountPerPerson{
     int value = (self.invoiceAmount * self.tipInPercent / 100) / self.amountOfPersons;
-    if([self getCents:value]<10){
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.0%d", [self getEuros: value], [self getCents:value]]];
-    }else{
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.%d", [self getEuros: value], [self getCents:value]]];
-    }
+    return [self check:value];
 }
 
 - (NSString *) getInvoiceAmount{
     int value = self.invoiceAmount;
-    if([self getCents:value]<10){
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.0%d", [self getEuros: value], [self getCents:value]]];
-    }else{
-        return [self substring:
-                [NSMutableString stringWithFormat:@"%d.%d", [self getEuros: value], [self getCents:value]]];
-    }
+    return [self check:value];
 }
 
 - (NSString *) substring: (NSString *) value{

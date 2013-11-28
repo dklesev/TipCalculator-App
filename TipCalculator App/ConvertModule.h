@@ -28,4 +28,6 @@
 
 - (NSString *) substring: (NSString *) value;
 
+- (NSString *) check: (int)value;
+
 @end
