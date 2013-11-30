@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CalcViewController.h"
 
 @interface ViewController ()
 
@@ -17,16 +18,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //Hide the keyboard
     self.modelConverter                 = [[ConvertModule alloc] init];
     self.invoiceAmount.delegate=self;
- 	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"afterCalculation"]) {
+        [segue.destinationViewController setModelConverter:self.modelConverter];
+    }
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField{

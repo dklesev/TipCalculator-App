@@ -17,26 +17,15 @@
 @end
 
 @implementation CalcViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize modelConverter = _modelConverter;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    self.amount.text                    = [self.modelConverter getInvoiceAmount];
+    self.tipAmount.text                 = [self.modelConverter getTipAmount];
+    self.tipAmountPerPerson.text        = [self.modelConverter getTipAmountPerPerson];
+    self.amountPerPerson.text           = [self.modelConverter getInvoiceAmountPerPerson];
 }
 
 @end

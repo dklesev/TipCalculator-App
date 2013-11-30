@@ -10,6 +10,6 @@
 #import "ConvertModule.h"
 
 @interface CalcViewController : UIViewController
-@property (strong, nonatomic) ConvertModule *model;
+@property (strong, nonatomic) ConvertModule *modelConverter;
 
 @end
